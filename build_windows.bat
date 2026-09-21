@@ -121,19 +121,21 @@ for %%F in ("runtime\tesseract\tessdata\eng.traineddata" "runtime\tesseract\tess
 echo OCR models are ready.
 
 echo [5/6] Preparing Malayalam font...
-if not exist "runtime\fonts\NotoSansMalayalam-Regular.ttf" (
-    mkdir "runtime\fonts" >nul 2>nul
-    call :download "https://raw.githubusercontent.com/notofonts/noto-fonts/main/hinted/ttf/NotoSansMalayalam/NotoSansMalayalam-Regular.ttf" "runtime\fonts\NotoSansMalayalam-Regular.ttf"
-    if errorlevel 1 (
-        echo ERROR: Failed to download Noto Sans Malayalam font.
-        goto :error
-    )
+if exist "runtime\fonts\NotoSansMalayalam-Regular.ttf" goto :font_ready
+
+mkdir "runtime\fonts" >nul 2>nul
+call :download "https://raw.githubusercontent.com/notofonts/noto-fonts/main/hinted/ttf/NotoSansMalayalam/NotoSansMalayalam-Regular.ttf" "runtime\fonts\NotoSansMalayalam-Regular.ttf"
+if errorlevel 1 (
+    echo ERROR: Failed to download Noto Sans Malayalam font.
+    goto :error
 )
 
+:font_ready
 if not exist "runtime\fonts\NotoSansMalayalam-Regular.ttf" (
     echo ERROR: Missing runtime\fonts\NotoSansMalayalam-Regular.ttf
     goto :error
 )
+
 for %%A in ("runtime\fonts\NotoSansMalayalam-Regular.ttf") do if %%~zA LSS 50000 (
     echo ERROR: Malayalam font looks incomplete.
     goto :error
