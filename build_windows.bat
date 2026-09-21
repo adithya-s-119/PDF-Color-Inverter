@@ -4,7 +4,7 @@ setlocal EnableExtensions
 title PDF Color Inverter - Windows Build
 
 echo ============================================================
-echo   PDF Color Inverter 3.6 - Windows Build
+echo   PDF Color Inverter 1.0 - Windows Build
 echo ============================================================
 echo.
 
