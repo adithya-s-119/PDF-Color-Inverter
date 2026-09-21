@@ -21,7 +21,7 @@ except ImportError:
 
 
 APP_NAME = "PDF Color Inverter"
-VERSION = "3.6"
+VERSION = "1.0"
 
 
 def resource_path(*parts):
