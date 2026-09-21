@@ -2,6 +2,14 @@
 
 A modern Windows desktop application for inverting the colours of PDF documents, with batch processing, live preview, drag-and-drop support, and optional English + Malayalam OCR.
 
+## Why Use PDF Color Inverter?
+
+PDF Color Inverter can be useful in a few practical situations:
+
+- **Dark-mode reading:** If a PDF has a white background and is uncomfortable to read for long periods, you can invert the PDF to create a dark-background version that is easier to read in low-light environments.
+- **Printing:** If a PDF has a dark or black background, you can invert it to create a white-background version that is more suitable for printing and can help reduce unnecessary dark ink or toner usage.
+- **Accessibility and personal preference:** Inverting a document can make certain PDFs more comfortable to view depending on the reader's display and lighting conditions.
+
 ## Version
 
 **1.0**
@@ -57,7 +65,7 @@ build_windows.bat
 The finished executable will be created at:
 
 ```text
-dist\PDFColorInverter.exe
+dist\\PDFColorInverter.exe
 ```
 
 The build script automatically:
@@ -81,7 +89,7 @@ run_windows.bat
 Or launch the application directly with Python:
 
 ```bat
-.venv\Scripts\python.exe app.py
+.venv\\Scripts\\python.exe app.py
 ```
 
 ## Project Structure
